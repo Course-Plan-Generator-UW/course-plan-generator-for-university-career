@@ -1,0 +1,39 @@
+springboot + mybatis-plus
+springboot:提供了web功能；容器功能；
+    自定义一个类，写@RestController @RequestMapping
+    在类中自定义方法，方法上写@GetMapping @PostingMapping @PutMapping @DeleteMapping @PatchMapping
+mybatis-plus:
+    BaseMapper中已经提供了基本的增删改查sql模板了
+        自定义一个类继承 BaseMapper<自定义的实体类>
+
+java基本语法
+java面向对象
+java集合
+java文件操作  读文件写文件
+java网络操作  HttpConnection
+java....
+
+数据库:sql 用来操作数据库的语法
+java:jdbc java中用来连接数据库的工具套件
+mybatis:jdbc的封装
+spring:容器；aop;
+spring-boot:写web应用；
+spring-boot中使用mybatis;
+
+日志sf4j 在什么时候学都ok
+
+如果要新建一个项目的の话：
+1.拷贝一个模板项目，重命名
+拷贝pom.xml中的内容，修改项目信息
+2.修改sql/createDbAndUser.sql中的数据库名、用户名、密码，并执行
+在数据库中创建表，注意：所有字段和表都要有注释（用来生成java代码中的注释以及页面中的字段）
+3.创建package例如 com.xxx
+4.修改application.properties中的数据库连接信息;端口号;应用名
+修改logback-spring.xml中的包名
+5.idea中创建database，连接数据库；
+用easycode自动生成后端和前端代码
+6.执行MainApplication，测试
+
+如果要执行这个项目：
+
+

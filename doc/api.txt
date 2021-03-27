@@ -1,0 +1,22 @@
+1.login:
+http://127.0.0.1:8081/scc/user/login
+post
+application/json
+data:
+{
+"username":"root",
+"password":"root",
+"usertype":"student",
+"validateCode":"UGkb",
+"validateCodeKey":"111"
+}
+return:
+
+2.
+{
+  "code": 2,
+  "data": null,
+  "msg": "验证码不正确或已超时"
+}
+
+

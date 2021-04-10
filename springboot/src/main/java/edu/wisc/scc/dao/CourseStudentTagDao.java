@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * t_course_student_tag(CourseStudentTag)表数据库访问层
  *
- * @author 蔺高祈
+ * @author 高祈
  * @since 2021-04-10 00:21:54
  */
 @Mapper

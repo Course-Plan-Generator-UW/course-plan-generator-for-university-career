@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * interest info(StudentInterestInfo)表实体类
  *
- * @author 蔺高祈
+ * @author 高祈
  * @since 2021-03-28 11:35:10
  */
 @Data

@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * subject info(SubjectInfo)表实体类
  *
- * @author 蔺春华
+ * @author 蔺高祈
  * @since 2021-03-28 11:34:51
  */
 @Data

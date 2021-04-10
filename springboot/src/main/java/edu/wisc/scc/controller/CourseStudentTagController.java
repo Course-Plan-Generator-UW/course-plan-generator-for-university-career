@@ -23,7 +23,7 @@ import javax.annotation.Resource;
  * queryAll.do
  * deleteById.do
  *
- * @author 蔺春华
+ * @author 蔺高祈
  * @since 2021-04-10 00:21:54
  */
 @RestController

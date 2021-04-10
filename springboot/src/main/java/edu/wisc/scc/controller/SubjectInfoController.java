@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 /**
  * subject info(SubjectInfo)表控制层
  *
- * @author 蔺春华
+ * @author 蔺高祈
  * @since 2021-03-28 11:34:51
  */
 @RestController

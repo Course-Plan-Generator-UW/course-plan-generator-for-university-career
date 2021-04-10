@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * student choose course record(StudentChooseCourseRecord)表控制层
  *
- * @author 蔺春华
+ * @author 蔺高祈
  * @since 2021-04-07 21:06:48
  */
 @RestController

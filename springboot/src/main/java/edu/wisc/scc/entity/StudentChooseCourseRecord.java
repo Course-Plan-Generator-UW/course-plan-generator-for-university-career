@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * student choose course record(StudentChooseCourseRecord)表实体类
  *
- * @author 蔺春华
+ * @author 蔺高祈
  * @since 2021-04-07 21:06:46
  */
 @Data

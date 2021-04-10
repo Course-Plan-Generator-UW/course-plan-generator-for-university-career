@@ -7,6 +7,7 @@ import Course from '../views/Course.vue'
 import SurveyInstruction from '../views/SurveyInstruction.vue'
 import Survey from '../views/Survey.vue'
 import SignUp from '../views/SignUp.vue'
+import MySchedule from '../views/MySchedule.vue'
 
 Vue.use(VueRouter)
 
@@ -32,7 +33,7 @@ const routes = [
     component: MainMenu
   },
   {
-    path: '/Course',
+    path: '/Course/:courseName',
     name: 'Course',
     component: Course
   },
@@ -45,6 +46,11 @@ const routes = [
     path: '/Survey',
     name: 'Survey',
     component: Survey
+  },
+  {
+    path: '/MySchedule',
+    name: 'MySchedule',
+    component: MySchedule
   },
 ]
 

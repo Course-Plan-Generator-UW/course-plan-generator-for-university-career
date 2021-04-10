@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.extension.api.R;
 import common.*;
 import edu.wisc.scc.dao.StudentUserDao;
 import edu.wisc.scc.entity.StudentUser;
+import edu.wisc.scc.service.StudentInterestInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +24,9 @@ public class UserLoginService {
 
     @Autowired
     private OnlineUserService onlineUserService;
+
+    @Autowired
+    private StudentInterestInfoService studentInterestInfoService;
 
     @Autowired
     private UserLoginDao userLoginDao;
@@ -123,6 +127,7 @@ public class UserLoginService {
         user.preInsert();
         user.setUserPwd(MD5Utils.encrypt(user.getUserPwd()));
         studentUserDao.insert(user);
+        studentInterestInfoService.initInterestsByStudentId(user.getId());
     }
 
     public boolean isUserNameExists(String userName) {

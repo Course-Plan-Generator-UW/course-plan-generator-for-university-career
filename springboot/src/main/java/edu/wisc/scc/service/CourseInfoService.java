@@ -6,6 +6,8 @@ import edu.wisc.scc.entity.CourseInfo;
 import org.springframework.stereotype.Service;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+
 /**
  * course info(CourseInfo)表服务实现类
  *
@@ -16,4 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CourseInfoService extends ServiceImpl<CourseInfoDao, CourseInfo> {
 
+    public List<String> queryAllSubject() {
+        return this.baseMapper.queryAllSubject();
+    }
 }

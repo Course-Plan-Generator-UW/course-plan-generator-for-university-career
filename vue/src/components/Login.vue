@@ -68,7 +68,7 @@ export default {
         });
           const _this = this;
           //alert('submit!');
-          this.$axios.post('http://127.0.0.1:8081/scc/user/login', this.ruleForm).then(res =>{
+          this.$axios.post(this.GLOBAL.BASE_URL+'user/login', this.ruleForm).then(res =>{
             loading.close();
               //console.log(res);
               const data = res.data

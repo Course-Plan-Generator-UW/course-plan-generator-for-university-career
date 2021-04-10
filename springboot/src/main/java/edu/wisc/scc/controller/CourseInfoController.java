@@ -1,6 +1,7 @@
 package edu.wisc.scc.controller;
 
 
+import com.alibaba.fastjson.JSONArray;
 import common.JavaUtils;
 import common.IdDto;
 import com.alibaba.fastjson.JSONObject;
@@ -13,7 +14,6 @@ import edu.wisc.scc.entity.CourseInfo;
 import edu.wisc.scc.service.CourseInfoService;
 import org.springframework.web.bind.annotation.*;
 import lombok.extern.slf4j.Slf4j;
-
 import java.util.*;
 import javax.annotation.Resource;
 
@@ -41,8 +41,9 @@ public class CourseInfoController extends ApiController {
      * @param courseInfo 查询实体
      * @return 所有数据
      */
-    @GetMapping("queryPage.do")
+    //@GetMapping("queryPage.do")
     public R selectAll(Page<CourseInfo> page, CourseInfoQueryDto courseInfo) {
+        log.info("selectAll params: page={} courseInfo={}",JSONObject.toJSONString(page),JSONObject.toJSONString(courseInfo));
         QueryWrapper<CourseInfo> query = new QueryWrapper<>();
         if (!JavaUtils.isEmpty(courseInfo.getId())) {
             query = query.eq("id",courseInfo.getId());
@@ -52,6 +53,12 @@ public class CourseInfoController extends ApiController {
         }
         if (!JavaUtils.isEmpty(courseInfo.getCourseName())) {
             query = query.like("course_name",courseInfo.getCourseName());
+        }
+        if (!JavaUtils.isEmpty(courseInfo.getSubject())) {
+            query = query.eq("subject",courseInfo.getSubject());
+        }
+        if (!JavaUtils.isEmpty(courseInfo.getSubjectArr())) {
+            query = query.in("subject",courseInfo.getSubjectArr());
         }
         if (!JavaUtils.isEmpty(courseInfo.getTotalStudentsLimitMax())) {
             query = query.le("total_students",courseInfo.getTotalStudentsLimitMax());
@@ -72,6 +79,49 @@ public class CourseInfoController extends ApiController {
             query = query.ge("avg_gpa",courseInfo.getAvgGpa());
         }
         return success(this.courseInfoService.page(page,query));
+    }
+
+
+    @GetMapping("queryPage.do")
+    public R queryAll(CourseInfoQueryDto courseInfo) {
+        log.info("selectAll params: courseInfo={}",JSONObject.toJSONString(courseInfo));
+        QueryWrapper<CourseInfo> query = new QueryWrapper<>();
+        if (!JavaUtils.isEmpty(courseInfo.getId())) {
+            query = query.eq("id",courseInfo.getId());
+        }
+        if (!JavaUtils.isEmpty(courseInfo.getStatus())) {
+            query = query.eq("status",courseInfo.getStatus());
+        }
+        if (!JavaUtils.isEmpty(courseInfo.getCourseName())) {
+            query = query.like("course_name",courseInfo.getCourseName());
+        }
+        if (!JavaUtils.isEmpty(courseInfo.getSubject())) {
+            query = query.eq("subject",courseInfo.getSubject());
+        }
+        if (!JavaUtils.isEmpty(courseInfo.getSubjectArr())) {
+            query = query.in("subject",courseInfo.getSubjectArr());
+        }
+        if (!JavaUtils.isEmpty(courseInfo.getTotalStudentsLimitMax())) {
+            query = query.le("total_students",courseInfo.getTotalStudentsLimitMax());
+        }
+        if (!JavaUtils.isEmpty(courseInfo.getTotalStudentsLimitMin())) {
+            query = query.ge("total_students",courseInfo.getTotalStudentsLimitMin());
+        }
+        if (!JavaUtils.isEmpty(courseInfo.getTotalStudents())) {
+            query = query.ge("total_students",courseInfo.getTotalStudents());
+        }
+        if (!JavaUtils.isEmpty(courseInfo.getAvgGpaLimitMax())) {
+            query = query.le("avg_gpa",courseInfo.getAvgGpaLimitMax());
+        }
+        if (!JavaUtils.isEmpty(courseInfo.getAvgGpaLimitMin())) {
+            query = query.ge("avg_gpa",courseInfo.getAvgGpaLimitMin());
+        }
+        if (!JavaUtils.isEmpty(courseInfo.getAvgGpa())) {
+            query = query.ge("avg_gpa",courseInfo.getAvgGpa());
+        }
+        JSONObject obj = new JSONObject();
+        obj.put("records", JSONArray.toJSON(this.courseInfoService.list(query)));
+        return R.ok(obj);
     }
 
     /**
@@ -166,4 +216,15 @@ public class CourseInfoController extends ApiController {
         String id = entity.getId();
         return this.delete(id);
     }
+    /**
+     * 获取所有subject不重名  按名字排序
+     * @return
+     */
+    @GetMapping("queryAllSubject.do")
+    public R delete2() {
+        List<String> allSubject =  this.courseInfoService.queryAllSubject();
+        return R.ok(allSubject);
+    }
+
+
 }

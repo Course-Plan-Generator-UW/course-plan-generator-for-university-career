@@ -1,5 +1,5 @@
 1.login:
-http://127.0.0.1:8081/scc/user/login
+http://127.0.0.1:8081/user/login
 post
 application/json
 data:

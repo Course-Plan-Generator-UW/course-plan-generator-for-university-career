@@ -52,6 +52,12 @@ public class LoginInterceptor implements HandlerInterceptor {
         log.info("返回结果={}", result);
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json; charset=utf-8");
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Cache-Control","no-cache");
+        //response.setHeader("Access-Control-Allow-Methods", "POST,OPTIONS,GET,OPTIONS");
+        //response.setHeader("Access-Control-Max-Age", "3600");
+        //response.setHeader("Access-Control-Allow-Headers", "accept,x-requested-with,Content-Type");
+        //response.setHeader("Access-Control-Allow-Credentials", "true");
         try (PrintWriter writer = response.getWriter()) {
             writer.print(JSON.toJSONString(result));
         }

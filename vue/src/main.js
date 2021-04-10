@@ -6,10 +6,13 @@ import axios from 'axios'
 import Element from 'element-ui'
 import "element-ui/lib/theme-chalk/index.css"
 import "./axios"
+import locale from "element-ui/lib/locale/lang/en"
+import global_ from "./global.vue"
 
 Vue.config.productionTip = false
-Vue.use(Element)
+Vue.use(Element, {locale})
 Vue.prototype.$axios = axios
+Vue.prototype.GLOBAL = global_
 
 new Vue({
   router,

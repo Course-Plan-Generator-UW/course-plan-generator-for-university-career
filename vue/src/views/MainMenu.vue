@@ -15,7 +15,7 @@
           <a @click="jumpGS" class="list-text">Generate Schedule</a>
         </div>
         <div id="list3">
-          <p style="display: inline; font-size: 60px">Check my Schedule</p>
+          <a @click="jumpMS" class="list-text">Check My Schedule</a>
         </div>
       </div>
       <!-- <button @click="test">HERE</button> -->
@@ -37,6 +37,9 @@ export default {
     },
     jumpGS() {
       this.$router.push("/SurveyInstruction");
+    },
+    jumpMS() {
+      this.$router.push("/MySchedule");
     },
     test(){
       console.log(this.$store.getters.getUserInfo)

@@ -20,7 +20,10 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         log.info("登录拦截器");
         registry.addInterceptor(loginInterceptor)
+                .addPathPatterns("/studentInterestInfo/**")
+                .addPathPatterns("/studentChooseCourseRecord/**")
                 .addPathPatterns("/studentUser/**")
+                .addPathPatterns("/courseInfo/**")
                 .addPathPatterns("/user/**")
                 .excludePathPatterns(
                         "/user/codeImg",

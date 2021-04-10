@@ -90,6 +90,9 @@ export default {
     };
   },
   methods: {
+    resetForm(formName) {
+        this.$refs[formName].resetFields();
+      },
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
@@ -102,7 +105,7 @@ export default {
           const _this = this;
           this.$axios
             .post(
-              "http://127.0.0.1:8081/scc/user/regist",
+              this.GLOBAL.BASE_URL+"user/regist",
               this
                 .ruleForm /* , {
                   headers:{

@@ -42,7 +42,7 @@ export default {
           this.$router.push("/SurveyInstruction");
           break;
         case "3":
-          console.log("check");
+          this.$router.push("/MySchedule");
           break;
         case "5":
           this.logOut();
@@ -52,7 +52,7 @@ export default {
     },
     logOut() {
       this.$axios
-        .get("http://127.0.0.1:8081/scc/user/logout", {
+        .get(this.GLOBAL.BASE_URL+"user/logout", {
           params: {
             //userId: this.$store.getters.getUserToken.userId,
             userId: JSON.parse(sessionStorage.getItem("userToken")).userId

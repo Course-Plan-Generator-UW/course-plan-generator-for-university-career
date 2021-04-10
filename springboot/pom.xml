@@ -130,6 +130,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.4.3</version>
                 <configuration>
+                        <includeSystemScope>true</includeSystemScope>
                     <excludes>
                         <exclude>
                             <groupId>org.projectors</groupId>

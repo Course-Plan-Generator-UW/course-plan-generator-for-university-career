@@ -21,7 +21,13 @@ public class CourseInfo extends BaseEntity<CourseInfo> {
     //student count
     private Integer totalStudents;
 
+    //subject name
+    private String subject;
+
     //avg gpa
-    private Object avgGpa;
+    private Double avgGpa;
+
+
+    private Double avgRate;
 
 }

@@ -33,6 +33,7 @@ public class Testing {
     public void shouldSelectOnlyOneNeededCourseOutOfThree() {
         Schedule problem = generateRealLifeTestSchedule();
         Schedule solution = JavaSolver.solve(problem);
+        System.out.println(solution.toString());
         assertEquals("[12-lit]", solution.toString());
     }
 
@@ -56,12 +57,7 @@ public class Testing {
         List<UserNeeds> userNeedsList = new ArrayList<>();
         userNeedsList.add(new UserNeeds(3, 12));
 
-        List<CourseToUserNeedsMapping> courseToUserNeedsMappingList = new ArrayList<>();
-        for (int i = 0; i < courses.size(); i++) {
-            courseToUserNeedsMappingList.add(new CourseToUserNeedsMapping((long) i, courses.get(i), userNeedsList.get(0)));
-        }
-
-        return new Schedule(courses, userNeedsList, courseToUserNeedsMappingList);
+        return new Schedule(courses, userNeedsList);
     }
 
     private static void testConstraintsPenalty(BiFunction<ScheduleConstraintProvider, ConstraintFactory, Constraint> constraint, Schedule problem, int penalty) {

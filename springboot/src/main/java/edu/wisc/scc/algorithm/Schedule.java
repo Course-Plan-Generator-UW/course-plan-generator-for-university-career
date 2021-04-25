@@ -29,6 +29,13 @@ public class Schedule {
     public Schedule(){
     }
 
+    public Schedule(List<Course> courses, List<UserNeeds> userNeedsList) {
+        this(courses, userNeedsList, new ArrayList<>());
+        for (int i = 0; i < courses.size(); i++) {
+            this.courseToUserNeedsMappingList.add(new CourseToUserNeedsMapping((long) i, courses.get(i), userNeedsList.get(0)));
+        }
+    }
+
     public Schedule(List<Course> courses, List<UserNeeds> userNeedsList, List<CourseToUserNeedsMapping> courseToUserNeedsMappingList){
         this.courses = courses;
         this.userNeedsList = userNeedsList;
@@ -53,14 +60,17 @@ public class Schedule {
 
     @Override
     public String toString() {
+        return getComputedCourses().toString();
+    }
+
+    public List<Course> getComputedCourses() {
         List<Course> courses = new ArrayList<>();
         for (CourseToUserNeedsMapping courseToUserNeedsMapping: courseToUserNeedsMappingList) {
             if (courseToUserNeedsMapping.getCourse()!=null) {
                 courses.add(courseToUserNeedsMapping.getCourse());
             }
         }
-
-        return courses.toString();
+        return courses;
     }
 
 }

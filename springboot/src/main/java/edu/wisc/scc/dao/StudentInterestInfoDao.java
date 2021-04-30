@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * interest info(StudentInterestInfo)表数据库访问层
  *
- * @author 高祈
+ * @author 蔺春华
  * @since 2021-03-28 11:35:11
  */
 @Mapper

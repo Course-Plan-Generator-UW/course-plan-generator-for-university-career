@@ -174,7 +174,8 @@ export default {
         if (this.data.avgRate) {
           this.curRate = this.data.avgRate;
         }
-        console.log(this.data);
+        this.data.avgGpa = Math.floor(this.data.avgGpa * 1000) / 1000
+        //console.log(this.data);
       });
     this.$axios
       .get(

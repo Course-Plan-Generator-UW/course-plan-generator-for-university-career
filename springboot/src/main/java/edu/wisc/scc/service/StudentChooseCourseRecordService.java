@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * student choose course record(StudentChooseCourseRecord)表服务实现类
  *
- * @author 高祈
+ * @author 蔺春华
  * @since 2021-04-07 21:06:47
  */
 @Service("studentChooseCourseRecordService")

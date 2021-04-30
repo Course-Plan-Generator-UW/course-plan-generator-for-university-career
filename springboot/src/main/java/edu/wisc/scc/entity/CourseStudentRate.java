@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * t_course_student_rate(CourseStudentRate)表实体类
  *
- * @author 高祈
+ * @author 蔺春华
  * @since 2021-04-10 00:21:33
  */
 @Data

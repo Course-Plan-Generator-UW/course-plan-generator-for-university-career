@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * interest info(StudentInterestInfo)表控制层
  *
- * @author 高祈
+ * @author 蔺春华
  * @since 2021-03-28 11:35:11
  */
 @RestController

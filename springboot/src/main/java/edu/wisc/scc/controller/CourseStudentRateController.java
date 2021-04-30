@@ -23,7 +23,7 @@ import javax.annotation.Resource;
  *
  * t_course_student_rate(CourseStudentRate)表控制层
  *
- * @author 高祈
+ * @author 蔺春华
  * @since 2021-04-10 00:21:34
  */
 @RestController

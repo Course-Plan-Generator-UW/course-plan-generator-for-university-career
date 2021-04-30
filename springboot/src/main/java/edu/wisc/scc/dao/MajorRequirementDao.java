@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * major requirement(MajorRequirement)表数据库访问层
  *
- * @author 高祈
+ * @author 蔺春华
  * @since 2021-04-07 20:10:57
  */
 @Mapper

@@ -352,7 +352,7 @@ export default {
                 });
               } else if (data.code === -1) {
                 this.$alert(
-                  "You already this course in the semester you selected",
+                  "You already have this course in the semester you selected",
                   "Warning",
                   {
                     confirmButtonText: "Confirm",

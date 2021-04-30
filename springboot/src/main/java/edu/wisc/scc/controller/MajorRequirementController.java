@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 /**
  * major requirement(MajorRequirement)表控制层
  *
- * @author 高祈
+ * @author 蔺春华
  * @since 2021-04-07 20:10:57
  */
 @RestController

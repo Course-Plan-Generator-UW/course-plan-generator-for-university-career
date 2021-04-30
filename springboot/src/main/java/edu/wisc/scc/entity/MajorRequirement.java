@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * major requirement(MajorRequirement)表实体类
  *
- * @author 高祈
+ * @author 蔺春华
  * @since 2021-04-07 20:10:56
  */
 @Data

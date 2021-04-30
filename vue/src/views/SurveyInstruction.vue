@@ -6,8 +6,19 @@
   <div id="box">
         <div id="text-box">
             <h1>Welcome to Course Generator!</h1>
-            <p>We will ask you several survey questions to know about you.</p>
-            <p>Press start to begin!</p>
+            <p>Pick your major to begin</p>
+            <el-select
+                  v-model="major"
+                  placeholder="Choose a major"
+                >
+                  <el-option
+                    v-for="item in majors"
+                    :key="item"
+                    :label="item"
+                    :value="item"
+                  >
+                  </el-option>
+                </el-select>
         </div>
         <div id="btn-box">
             <el-button type="primary" @click="jump">Start</el-button>
@@ -28,6 +39,12 @@ export default {
         this.$router.push("/Survey?q=1")
     }
   },
+  data(){
+      return{
+          majors:["computer science"],
+          major: ""
+      }
+  }
 }
 </script>
 

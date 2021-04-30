@@ -32,6 +32,7 @@
             >Sign Up</el-button
           >
           <el-button @click="resetForm('ruleForm')">Reset</el-button>
+          <el-button @click="goBack()">Go Back</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -91,7 +92,15 @@ export default {
   },
   methods: {
     resetForm(formName) {
-        this.$refs[formName].resetFields();
+        //this.$refs[formName].resetFields();
+        this.ruleForm.userName = ""
+        this.ruleForm.userPwd = ""
+        this.ruleForm.email = ""
+        this.ruleForm.firstName = ""
+        this.ruleForm.lastName = ""
+      },
+      goBack(){
+        this.$router.push("/")
       },
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {

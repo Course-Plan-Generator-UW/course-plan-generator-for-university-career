@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * student choose course record(StudentChooseCourseRecord)表数据库访问层
  *
- * @author 高祈
+ * @author 蔺春华
  * @since 2021-04-07 21:06:47
  */
 @Mapper

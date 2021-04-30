@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * major requirement(MajorRequirement)表服务实现类
  *
- * @author 高祈
+ * @author 蔺春华
  * @since 2021-04-07 20:10:57
  */
 @Service("majorRequirementService")

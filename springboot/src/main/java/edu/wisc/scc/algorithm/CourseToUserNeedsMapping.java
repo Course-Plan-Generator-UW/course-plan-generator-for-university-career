@@ -32,9 +32,13 @@ public class CourseToUserNeedsMapping {
         return course;
     }
 
-    public int getCourseLitCredits() {
-        if (course==null) return 0;
-        return course.getLitCredits();
+    public Integer[] getCourseMajorRequirementsFulfilled() {
+        if (course==null) return no_major_requirements_fulfilled_array();
+        return course.getMajor_reqs_satisfied();
+    }
+
+    public static Integer[] no_major_requirements_fulfilled_array() {
+        return new Integer[0];
     }
 
     public int getCourseCredits() {
@@ -46,11 +50,11 @@ public class CourseToUserNeedsMapping {
         this.course = course;
     }
 
-    public UserNeeds getScheduleNeeds() {
+    public UserNeeds getUserNeeds() {
         return userNeeds;
     }
 
-    public void setScheduleNeeds(UserNeeds userNeeds) {
+    public void setUserNeeds(UserNeeds userNeeds) {
         this.userNeeds = userNeeds;
     }
 

@@ -15,7 +15,7 @@ public class JavaSolver {
                 .withSolutionClass(Schedule.class)
                 .withEntityClasses(CourseToUserNeedsMapping.class)
                 .withConstraintProviderClass(ScheduleConstraintProvider.class)
-                .withTerminationSpentLimit(Duration.ofSeconds(5)));;
+                .withTerminationSpentLimit(Duration.ofSeconds(5)));
         Solver<Schedule> solver = solverFactory.buildSolver();
 
         // Solve the problem

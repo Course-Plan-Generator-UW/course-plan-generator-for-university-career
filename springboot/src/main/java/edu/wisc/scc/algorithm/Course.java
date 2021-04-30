@@ -7,12 +7,12 @@ public class Course {
 
     private String courseID;
     private int credits;
-    private int litCredits;
+    private Integer[] major_reqs_satisfied; // = {0, 1, 0..}
 
-    public Course(String courseID, int credits, int litCredits) {
+    public Course(String courseID, int credits, Integer[] major_reqs_satisfied) {
         this.courseID = courseID;
         this.credits = credits;
-        this.litCredits = litCredits;
+        this.major_reqs_satisfied = major_reqs_satisfied;
     }
 
     public String getCourseID() {
@@ -23,8 +23,8 @@ public class Course {
         return credits;
     }
 
-    public int getLitCredits() {
-        return litCredits;
+    public Integer[] getMajor_reqs_satisfied() {
+        return major_reqs_satisfied;
     }
 
     @Override

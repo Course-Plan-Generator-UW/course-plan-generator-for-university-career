@@ -29,6 +29,7 @@ public class Schedule {
     public Schedule(){
     }
 
+    // Note that this method assumes there's only one userNeeds object
     public Schedule(List<Course> courses, List<UserNeeds> userNeedsList) {
         this(courses, userNeedsList, new ArrayList<>());
         for (int i = 0; i < courses.size(); i++) {
